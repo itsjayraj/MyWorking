@@ -1,0 +1,50 @@
+db.salesdata.group({
+	key: {category: 1},
+	initial: {salestotal: 0, salescount: 0},
+	reduce: function(doc, result){
+		result.salestotal += doc.sales;
+		result.salescount++;
+	}
+	finalize: function(result){
+		result
+	}
+});
+
+
+db.salesdata.mapReduce(function(){
+	//map function
+	//has access to this object
+	//has to emit 2 properties
+	emit(this.category, this.sales);
+}, function(key, values){
+	// called for each group based on the first param of emit
+	// return a single value and usually based on values param
+	
+	return Arrays.sum(values)
+}, {
+	//defines hoe to treat object
+	out: { inline: 1 } 
+});
+
+db.salesdata.mapReduce(function(){
+	emit(this.category, this.sales);
+}, function(key, values){
+	return Array.sum(values)
+}, {
+	out: { inline: 1 } 
+});
+
+
+
+db.salesdata.mapReduce(function(){}, function(){}, {});
+
+db.salesdata.mapReduce(function(){}, function(){}, {});
+
+//config server
+mongod.exe --configsvr --port 27000 --dbpath D:\mongodb-training\sharding-demo\configdb
+
+//mongos server - link mongod it uses default port 27017
+//clients connets to mongos instance instead of mongod
+//u shud first start config DB or this not identify port 27000
+mongos --configdb 127.0.0.1:27000
+

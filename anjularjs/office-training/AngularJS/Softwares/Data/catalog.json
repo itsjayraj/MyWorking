@@ -1,0 +1,193 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Kindle Paperwhite 3G",
+      "description": "Amazon 6inc Paperwhite display with exclusive Carta e-paper and next-generation built-in light, 212 ppi, optimised font technology, 16-level grey scale",
+      "category": "Readers",
+      "price": 11999,
+      "image": "Kindle-pw.jpg",
+      "daysLeft": 4
+    },
+    {
+      "id": 2,
+      "name": "Fitbit Surge Ultimate",
+      "description": "Train smarter and go farther with Surge�a sleek, fitness super watch designed to help you reach your peak performance. With built-in GPS, multisport functionality, and automatic, continuous heart rate, Surge delivers the stats you need to measure your effort and maximize your training time.",
+      "category": "Health",
+      "price": 19990,
+      "image": "fitbit_surge.jpg",
+      "daysLeft": 7
+    },
+    {
+      "id": 3,
+      "name": "Vokstar Mens Running Shoes",
+      "description": "Synthetic, Casual Wear with Lace-up type",
+      "category": "Footwear",
+      "price": 499,
+      "image": "Vokstar_men_shoes.jpg",
+      "daysLeft": 10
+    },
+    {
+      "id": 4,
+      "name": "Making India",
+      "description": "Bhagat is a symbol of new India. A torch-bearer for an unafraid generation. Fighting corruption is not restricted to naming and shaming a few corrupt officials.",
+      "category": "Book",
+      "price": 125,
+      "image": "making_india.jpg",
+      "daysLeft": 1
+    },
+    {
+      "id": 5,
+      "name": "Karbonn Titanium Machfive",
+      "description": "8MP primary camera with LED, 5-inch (12.7 centimeters) HD capacitive touchscreen, 2200mAH lithium-ion battery, Android v5 Lollipop operating system with 1.3GHz quad core processor, 2GB RAM, 16GB sotrage",
+      "category": "Mobile",
+      "price": 5999,
+      "image": "Karbonn_Machfive.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Jungle Book Boys T-Shirt",
+      "description": "70% Cotton and 30% polyester, Round neck, short sleeve",
+      "category": "KidsWear",
+      "price": 11999,
+      "image": "TShirt-JB.jpg",
+      "daysLeft": 6
+    },
+    {
+      "id": 7,
+      "name": "Lenovo Ideapad Flex 2-14 59-429728",
+      "description": "1.7 GHz Intel Core I3-4030U 4th Gen Processor, Windows 8.1 Operating System, Memory: 4GB RAM, 500GB Hard Disk, 8GB SSD, Display: Up to 35.56cm (14-Inch) HD (1366 x 768)",
+      "category": "Labtop",
+      "price": 31999,
+      "image": "lenovo_flex.jpg",
+      "daysLeft": 15
+    },
+    {
+      "id": 8,
+      "name": "WD My Passport X 2TB Gaming Portable Hard Drive",
+      "description": "My Passport X from WD expands your Xbox One or PC gaming experience.Connect this portable and powerful drive to immediately add storage capacity to your system.",
+      "category": "Storage",
+      "price": 8845,
+      "image": "WD__Passport2TB.jpg",
+      "daysLeft": 5
+    },
+    {
+      "id": 9,
+      "name": "HP x710W 16GB USB 3.0 Pen Drive",
+      "description": "Handy lidless design, durable sleek metallic housing, USB 3.0 compatible",
+      "category": "Storage",
+      "price": 585,
+      "image": "HP_16GBUSB_PenDrive.jpg",
+      "daysLeft": 10
+    },
+    {
+      "id": 10,
+      "name": "Funskool Digger the Dog",
+      "description": "Digger the dog shall become Your kids first companion. Digger the dog is irresistible with his large floppy ears, lovable droopy eyes and a cute tail",
+      "category": "Kids Toys",
+      "price": 332,
+      "image": "DiggertheDog.jpg",
+      "daysLeft": 4
+    }
+  ],
+  "reviews": [
+    {
+      "by": "james@abc.com",
+      "rating": 5,
+      "comments": "Good Product...",
+      "productId": 1
+    },
+    {
+      "by": "smith@abc.com",
+      "rating": 4,
+      "comments": "Look, performance all are realy pleasing...",
+      "productId": 1
+    },
+    {
+      "by": "james@abc.com",
+      "rating": 5,
+      "comments": "Good Product...",
+      "productId": 2
+    },
+    {
+      "by": "james@abc.com",
+      "rating": 5,
+      "comments": "Good Product...",
+      "productId": 3
+    },
+    {
+      "by": "james@abc.com",
+      "rating": 5,
+      "comments": "Good Product...",
+      "productId": 4
+    },
+    {
+      "by": "james@abc.com",
+      "rating": 5,
+      "comments": "Good Product...",
+      "productId": 5
+    },
+    {
+      "by": "james@abc.com",
+      "rating": 5,
+      "comments": "Good Product...",
+      "productId": 6
+    },
+    {
+      "by": "james@abc.com",
+      "rating": 5,
+      "comments": "Good Product...",
+      "productId": 7
+    },
+    {
+      "by": "james@abc.com",
+      "rating": 5,
+      "comments": "Good Product...",
+      "productId": 8
+    },
+    {
+      "by": "james@abc.com",
+      "rating": 5,
+      "comments": "Good Product...",
+      "productId": 9
+    },
+    {
+      "by": "james@abc.com",
+      "rating": 5,
+      "comments": "Good Product...",
+      "productId": 10
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "James Bond",
+      "userName": "james",
+      "password": "bond007"
+    },
+    {
+      "id": 2,
+      "name": "Jim Carry",
+      "userName": "jim",
+      "password": "carryme"
+    },
+    {
+      "id": 3,
+      "name": "Raj kumar",
+      "userName": "raj",
+      "password": "raj123"
+    }
+  ],
+  "carts": [
+    {
+      "id": 1,
+      "customerId": 1,
+      "items": [
+        {
+          "productId": 1,
+          "qty": 1
+        }
+      ]
+    }
+  ]
+}

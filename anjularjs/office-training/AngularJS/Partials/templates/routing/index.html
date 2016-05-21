@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="app/styles/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="app/styles/site.css">
+<!-- Lib includes -->
+	<script type="text/javascript" src="app/lib/angular.js"></script>
+	<script type="text/javascript" src="app/lib/angular-ui-router.min.js"></script>
+<!-- App includes -->
+	<title>My Personal Desk</title>
+	<style type="text/css">
+	</style>
+</head>
+<body ng-app="mainMod">
+	<div class="container">
+		<header class="well">
+			<h3>My Desk App</h3>
+			<div>
+				<ul class="nav nav-tabs">
+					<li><a ui-sref="home">Home</a></li>
+					<li><a ui-sref="expenses">Daily</a></li>
+					<li><a ui-sref="reports">Summary</a></li>
+				</ul>
+			</div>
+		</header>
+		<section class="panel panel-body panel-primary" ui-view>
+
+		</section>
+		<footer class="well">&copy; All Rights reserved.</footer>
+	</div>
+</body>
+</html>

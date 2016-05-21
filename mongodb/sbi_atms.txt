@@ -1,0 +1,46 @@
+// create db folder for config server
+D:\__temp\shard\data\configdb
+
+// create db folders for each of the shard servers
+D:\__temp\shard\data\server1db
+D:\__temp\shard\data\server2db
+D:\__temp\shard\data\server3db
+
+// create the shard config server
+mongod --configsvr --dbpath D:\__temp\shard\data\configdb --port 27000
+
+// create the shart router 
+mongos --configdb 127.0.0.1:27000
+
+// create the replica servers
+start mongod --dbpath D:\__temp\shard\data\server1db --port 27100
+start mongod --dbpath D:\__temp\shard\data\server2db --port 27200
+start mongod --dbpath D:\__temp\shard\data\server3db --port 27300
+
+// connect to the server
+mongo --port 27017
+use admin
+
+// add the shards
+sh.addShard("127.0.0.1:27100")
+sh.addShard("127.0.0.1:27200")
+sh.addShard("127.0.0.1:27300")
+
+
+sh.enableSharding("shardtestdb");
+sh.shardCollection("shardtestdb.test", {_id: 1});
+
+use shardtestdb;
+
+// run a script to insert 1000,000 documents
+var str = "a b c d e f g h i j k l m n o p q r s t u v w x y z";
+var str1 = "";
+for(var i=0; i<1024; i++){
+	str1 += str;
+}
+for(var i=0; i<1000000; i++){
+	db.test.insert({data: str1});
+}
+
+
+

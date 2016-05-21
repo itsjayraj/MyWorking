@@ -1,0 +1,22 @@
+<article class="panel panel-success">
+	<p class="panel-heading">
+		<h3>{{ Book.Title }} &mdash; <small>{{ Book.SubTitle }}</small></h3>
+	</p>
+	<div class="panel-body">
+		<div class="col-sm-4">
+ 			<img ng-src="{{ Book.Image }}" />
+		</div>
+		<div class="col-md-6">
+			<blockquote>
+				<p>{{ Book.Description }}</p>
+				<p>Author: {{ Book.Author }}</p>
+				<p>Year: {{ Book.Year }}</p>
+				<p>Publihser: {{ Book.Publisher }}</p>
+				<p>Pages: {{ Book.Page }}</p>
+			</blockquote>
+		</div>
+	</div>
+	<footer class="panel-footer">
+		
+	</footer>
+</article>

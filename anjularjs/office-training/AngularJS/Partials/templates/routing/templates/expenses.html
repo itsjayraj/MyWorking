@@ -1,0 +1,33 @@
+<h4>Daily Expenses:</h4>
+<section class="panel-body">
+	<article class="panel panel-body panel-info col-sm-4">
+		<div class="input-group">
+			<input class="form-control" ng-model="today" type="date" />
+	      	<span class="input-group-btn">
+	        	<button class="btn">Today...</button>
+	      	</span>
+	    </div>
+
+	    <div class="panel panel-default panel">
+	    	<header class="panel-heading">Today's Expenses...</header>
+	    	<article class="panel-body">
+	    		<table class="table">
+	    			<tr>
+	    			</tr>
+	    			<tr ng-repeat="">
+	    			</tr>
+	    		</table>
+	    	</article>
+	    	<footer class="panel-footer">
+	    	</footer>
+	    </div>
+	</article>
+	<div class="panel panel-body panel-default col-sm-7 col-sm-offset-1">
+		<article ui-view class="panel panel-success panel-body">
+
+		</article>
+		<article ui-view="chartView" class="panel panel-danger panel-body">
+
+		</article>
+	</div>
+</section>

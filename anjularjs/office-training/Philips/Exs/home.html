@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="app/styles/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="app/styles/site.css">
+	<link rel="stylesheet" type="text/css" href="app/styles/angular-ui-notification.min.css">
+	<script type="text/javascript" src="app/lib/angular.js"></script>
+	<script type="text/javascript" src="app/lib/angular-messages.min.js"></script>
+	<script type="text/javascript" src="app/lib/angular-ui-notification.min.js"></script>
+	<!-- App includes -->
+	<script type="text/javascript" src="app/js/mainMod.js"></script>
+	<script type="text/javascript" src="app/js/mainMod_values.js"></script>
+	<script type="text/javascript" src="app/js/philServices.js"></script>
+	<title>AngularJS - Web App</title>
+</head>
+<body class="container" ng-app="mainMod">
+	<div class="panel panel-default">
+		<header class="panel-heading">
+			<strong>Philips App....</strong>
+		</header>
+		<section class="panel-body">
+			<article class="panel panel-danger panel-body col-sm-4" style="height:500px; overflow: auto;" 
+				ng-controller="productsCtrl">
+				<select ng-model="inorder">
+					<option value="">Select...</option>
+					<option value="Name">By Name</option>
+					<option value="Price">Low to High</option>
+					<option value="-Price">Hight to Low</option>
+				</select>
+				<input type="text" ng-model="search.Name" />
+				<ul class="list-group">
+					<li class="list-group-item" 
+						ng-repeat="P in Products | filter: search | orderBy: inorder">
+						<img ng-src="app/images/{{P.Image}}" height="80"/>
+						<strong>{{ P.Name }} - {{ P.Price }}</strong>
+						<button class="btn btn-sm"
+								ng-click="onSelect(P)">Select</button>
+								<p style="color:red">{{ P.DaysLeft | flashDays:{days:10, msg:'Come back for this!'} }}</p>
+					</li>
+				</ul>
+			</article>
+			<article class="panel panel-danger panel-body col-md-6"
+				ng-include="'app/templates/product-details.html'">
+
+			</article>
+		</section>
+		<footer class="panel-footer">
+			<strong>Copyright &copy; MyCompany Inc. All rights reserved 2015-16.</strong>
+		</footer>
+	</div>
+</body>
+</html>

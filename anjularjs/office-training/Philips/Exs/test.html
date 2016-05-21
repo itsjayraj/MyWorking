@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="app/styles/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="app/styles/site.css">
+	<link rel="stylesheet" type="text/css" href="app/styles/angular-ui-notification.min.css">
+	<script type="text/javascript" src="app/lib/angular.js"></script>
+	<script type="text/javascript" src="app/lib/angular-messages.min.js"></script>
+	<script type="text/javascript" src="app/lib/angular-ui-notification.min.js"></script>
+	<!-- App includes -->
+	<script type="text/javascript" src="app/js/mainMod.js"></script>
+	<script type="text/javascript" src="app/js/mainMod_values.js"></script>
+	<script type="text/javascript" src="app/js/philServices.js"></script>
+	<title></title>
+</head>
+<body class="container" ng-app="mainMod">
+	<simple-dir></simple-dir>
+<!-- 	<article my-list dataSrc="Products" dataField="Name"
+		ng-controller="productsCtrl" 
+		class="panel panel-default panel-body">
+	</article> -->
+	<my-list dataSrc="Products" dataField="Name"
+		ng-controller="productsCtrl" 
+		class="panel panel-default panel-body">
+	</my-list>
+</body>
+</html>

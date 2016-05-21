@@ -1,0 +1,20 @@
+Event Handling in py
+1. eventlet
+2. greenlet
+
+Data Science:
+1. numpy - generate dataset which is ndarray
+2. scipy - scientific function
+3. pandas - stat analytics
+after data is recevied put data representative way
+4. matplotlib
+machine learning
+5. nltk
+6. sklearn
+
+
+Web Dev:
+1. Django completely full stack web dev tool
+2. web2py  - for lite weight service development
+3. cherrypy - for lite weight service development
+4. flask - for microservice

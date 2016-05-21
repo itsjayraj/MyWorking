@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- <script type="text/javascript" src="js_ooexs.js"></script> -->
+	<script type="text/javascript" src="mod.js"></script>
+	<title></title>
+	<script type="text/javascript">
+		onload	= function() {
+			// var cb = GetData(1001);
+			// var id = cb();
+			// console.log(id);
+
+
+			// scopeTest();
+
+			// modules test
+			//var mod = module();
+			mod.retrieve();
+			mod.save();
+			mod.insert();
+
+			// var t1 = Transaction(12, 4567, 78500, 'D');
+			// var t2 = new BankTransaction(12, 4567, 78500, 'Dr');
+			// var t3 = new BankTransaction(456, 908, 8500, 'Cr');
+			// console.log("T1: " + t1);
+			// console.log("T2: " + t2);
+			// console.log("T3: " + t3);
+
+			// var m1 = new Manager(2345, 10);
+			// console.log('Manager Id: ' + m1.getId());
+			// m1.getTeamSize();
+		};
+		var globalData = 100;
+		function scopeTest() {
+			var localData = 10;
+			if( 1 == 1) {
+				var blockData = 1000;
+				let blockData6 = 12345;
+			}
+			console.log('Global ' + globalData);
+			console.log('Local ' + localData);
+			console.log('Block ' + blockData);
+			console.log('Block ' + blockData6);
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

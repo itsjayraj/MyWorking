@@ -1,0 +1,143 @@
+JavaScript
+-> Implementation of ECMAScript
+-> Losely Typed Language
+-> Types : String, Object, Date, Number, Array, Undefined, null, Functions
+-> Creating Objects
+	: Literal Syntax - { id:123, name: 'James'.... }
+	: var o = new Object();
+		  o.status = false;
+	: Factory Pattern
+	: Constructor Pattern
+	: Prototype Pattern	 
+		-> Inheritance using prototype chaining
+-> Scopes
+	: Global Scope 
+	: Local Scope
+
+-> Closures
+	: Feature which combines function and environment in wchich it is created into an object.
+
+-> Execution Context
+	: Creation Stage
+		- Scope Chain, 
+		- Variable Object [arguments, locals],
+		- setting "this"
+	: Activation / Execution Stage
+
+-> Variable Hoisting with Context
+
+-> Promises & Defer objects
+
+-> Modules
+	-> IIFE
+	-> Revealing Modules
+	-> Synchronous moudle definitions
+		: CommonJs
+	-> Asynchronous module definitions (AMD)
+		: RequreJS, SystemJS
+
+==================================================================
+AngularJS
+-> Features
+	: Based on DI Pattern for losely coupled highly testable code 
+		implementation
+	: Module based
+	: Data binding and DOM Manipulation is achieved using Directives
+	: Uses subset of jQuery called jQlite for DOM manipulation
+	: Backed by large commuinty of developers
+	: Filters - for data related manipulations or formating
+	: MV-* framework
+	: SPA design framework
+
+-> Bootstrap / custom bootstrap - angular.bootstrap();
+-> Module : angular.module()
+	: Controller - controller()
+	: Value		 - value()
+	: Constant	 - constant()
+	: Factory	 - factory()
+	: Service	 - service()
+	: Provider	 - provider()
+	: config() - 
+	: run()
+
+-> Filters
+	: currency, uppercase, lowercase, filter, orderBy, limitTo, skip
+	: Types - Single-value, Collection-based
+
+-> Directives
+	: ng-app, ng-controller, ng-repeat, ng-src, ng-click,
+		ng-show, ng-hide, ng-class, ng-init
+	: Custom
+		-> Link-function syntax
+		-> Compile directive syntax
+			- DDO { 
+				restrict, require, template, templateUrl, 
+				link, controller, scope, transclude,
+				priority: -1
+			 }
+
+-> Scopes
+	- $rootScope, $scope ($rootScope.$new())
+	- Types (When used with instances of Directivces)
+		: Shared 
+		: Local - scope:true []	[$scope.$new(true)]
+		: Isolated	- scope: {}	[$scope.$new({..})]
+
+-> $digest cycle/ loop, $apply call, watchers,
+	 broadcast events
+	: $watch(scope.property, call back) -> creates watchers
+	: $apply() -> $rootScope.$digest() -> broadcast event
+		-> [Scope]Wathcers -> Rebind view
+	: For explicity notification can use
+		-> $on(event name, call back) - to register for custom event
+		-> $emit(event name, data) - to trigger custom event (emitted)
+		-> $broadcast(event name, data)
+
+-> Controllers
+	: With scope
+	: Without Scope
+		-> Controller aliasing is required for binding ("controller as")
+
+-> HTML Form support
+	: Properties
+		-> $pristine, $dirty, $invalid, $valid, $error
+	: Pseudo Styles
+		-> ng-pristine, ng-dirty, ng-invalid, ng-valid
+	: Messages
+		-> Module - ngMessages
+		-> Directives - ng-messages, ng-message
+
+-> Services ( singleton Objects )
+	: $inject, $compile, $rootScope, $http
+	: $log -> $window (console)
+		- log, info, warn, error, debug
+	: $exceptionHandler (use it like a function)
+		- to log errors
+	: $q - for async operations
+		- then(resolve, reject, notify)
+		- catch(reject)
+		- finally(resolve/reject, notify)
+	: Custom
+
+-> SPA [Single Page Application]
+	: Skeleton page with ng-view directive
+	: Partials
+	: Route configuration using ngRoute module
+
+-> Testing
+	: BDD  - jasmine, mocha, qunit, nunit...
+		- specs [describe('', function(){});]
+			- unit test methods [it('', function() {})]
+		- before and after methods
+	: Test Runner
+		- Karma (nodejs)
+		- Setup Karma 
+			: npm install karma 
+				[install karma tool in local path]
+			: npm install -g karma-cli
+				[install command line tool in user env.]
+		: Configurer project/app for Karma
+			-> karma init
+		: To run Karam
+			-> karma start
+-> Component (introduced in 1.5.0)

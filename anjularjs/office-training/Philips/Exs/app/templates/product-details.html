@@ -1,0 +1,96 @@
+<div ng-controller="tabsCtrl as ctrl">
+	<ul class="nav nav-tabs">
+		<li ng-class="{active: ctrl.isTab(1)}">
+				<a href="" ng-click="ctrl.setTab(1)">Details</a></li>
+		<li ng-class="{active: ctrl.isTab(2)}">
+				<a href="" ng-click="ctrl.setTab(2)">Reviews</a></li>
+		<li ng-class="{active: ctrl.isTab(3)}">
+				<a href="" ng-click="ctrl.setTab(3)">My Review</a></li>
+	</ul>
+	<div ng-show="ctrl.isTab(1)">
+		<h3>Details...</h3>
+		<img ng-src="app/images/{{Product.Image}}" width="125"/>
+		<h5>{{ Product.Name }}</h5>
+		<blockquote>{{ Product.Description }}</blockquote>
+		<strong>{{ Product.Price | currency:'&#8377;' }}</strong>
+	</div>
+	<div ng-show="ctrl.isTab(2)">
+		<h3>Reviews...</h3>
+		<div my-list dataSrc="Product.Reviews" 
+			dataField="Comments | uppercase">
+		</div>
+
+<!-- 		<ul class="list-group">
+			<li class="list-group-item"
+				ng-repeat="R in Product.Reviews">
+				<span class="badge">{{ R.Rating }}</span>
+				<h4>{{ R.Comments }}&mdash;<small>{{ R.By }}</small></h4>
+			</li>
+		</ul>
+ -->	</div>
+	<div ng-show="ctrl.isTab(3)" ng-controller="reviewsCtrl">
+		<h3>My Review</h3>
+		<form name="reviewForm" ng-submit="save()" novalidate>
+			<div class="form-group"> <!-- Rating -->
+				<select class="form-control" ng-model="Review.Rating"
+					required ng-options="r for r in [5,4,3,2,1]">
+					<!-- "c.descr as c.id for c in Categories" -->
+					<option value="">Select your rating</option>
+				</select>
+			</div>
+			<div class="form-group"> <!-- By (email) -->
+				<input type="email" class="form-control" ng-model="
+					Review.By" required placeholder="abc@philips.com" />
+			</div>
+			<div class="form-group"> <!-- Comments -->
+				<textarea class="form-control" ng-model="Review.Comments"
+					required placeholder="your comments here"
+					ng-minlength="10" ng-maxlength="250"
+					name="tCom">
+				</textarea>
+			</div>
+			<button class="btn btn-sm btn-block btn-success"
+					type="submit" ng-disabled="reviewForm.$invalid "> Save </button>
+		</form>
+		<div class="alert-danger" 
+					ng-messages="reviewForm.tCom.$error">
+					<div ng-message="required">
+								Your comments required...</div>
+					<div ng-message="minlength">
+								Comments should be min 10chrs...</div>
+					<div ng-message="maxlength">
+									Comments should't exceed 250chrs...</div>
+				</div>
+		<div class="well">
+			<strong>Is data valid: {{ reviewForm.$valid }}</strong>
+		</div>
+	</div>
+</div>
+
+<!-- <div ng-init="tab=1">
+	<ul class="nav nav-tabs">
+		<li ng-class="{active: tab==1}"><a href="" ng-click="tab=1">Details</a></li>
+		<li ng-class="{active: tab==2}"><a href="" ng-click="tab=2">Reviews</a></li>
+		<li ng-class="{active: tab==3}"><a href="" ng-click="tab=3">My Review</a></li>
+	</ul>
+	<div ng-show="tab == 1">
+		<h3>Details...</h3>
+		<img ng-src="app/images/{{Product.Image}}" width="125"/>
+		<h5>{{ Product.Name }}</h5>
+		<blockquote>{{ Product.Description }}</blockquote>
+		<strong>{{ Product.Price | currency:'&#8377;' }}</strong>
+	</div>
+	<div ng-show="tab == 2">
+		<h3>Reviews...</h3>
+		<ul class="list-group">
+			<li class="list-group-item"
+				ng-repeat="R in Product.Reviews">
+				<span class="badge">{{ R.Rating }}</span>
+				<h4>{{ R.Comments }}&mdash;<small>{{ R.By }}</small></h4>
+			</li>
+		</ul>
+	</div>
+	<div ng-show="tab == 3">
+		<h3>My Review</h3>
+	</div>
+</div> -->
